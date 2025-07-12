@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Documento HTML en español -->
+<head>
+  <meta charset="UTF-8" /> <!-- Codificación de caracteres -->
+  <title>Registro de Créditos</title> <!-- Título de la pestaña/navegador -->
+
+  <!-- Enlace a la hoja de estilos CSS externa -->
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+  <h1>Registrar nuevo crédito</h1> <!-- Título principal de la página -->
+
+  <!-- Formulario para agregar o editar créditos -->
+  <form id="formulario">
+    <!-- Campo oculto para almacenar el ID del crédito (para edición) -->
+    <input type="hidden" id="id" name="id" value="" />
+    
+    <!-- Campo para ingresar el nombre del cliente -->
+    <label>
+      Cliente:
+      <input type="text" name="cliente" id="cliente" required />
+    </label>
+
+    <!-- Campo para ingresar el monto del crédito -->
+    <label>
+      Monto:
+      <input type="number" name="monto" id="monto" min="0" step="0.01" required />
+    </label>
+
+    <!-- Campo para ingresar la tasa de interés anual -->
+    <label>
+      Tasa de Interés (Porcentaje anual):
+      <input type="number" name="tasa_interes" id="tasa_interes" min="0" step="0.01" required />
+    </label>
+
+    <!-- Campo para ingresar el plazo en meses -->
+    <label>
+      Plazo (meses):
+      <input type="number" name="plazo" id="plazo" min="1" required />
+    </label>
+
+    <!-- Campo para ingresar la fecha de otorgamiento -->
+    <label>
+      Fecha de Otorgamiento:
+      <input type="date" name="fecha_otorgamiento" id="fecha_otorgamiento" required />
+    </label>
+
+    <!-- Botón para enviar el formulario (registrar o actualizar crédito) -->
+    <button type="submit" id="btn-submit">Registrar</button>
+
+    <!-- Botón para cancelar la edición (oculto inicialmente) -->
+    <button type="button" id="btn-cancel" style="display:none;">Cancelar edición</button>
+  </form>
+
+  <!-- Párrafo para mostrar mensajes al usuario (éxito o error) -->
+  <p id="mensaje"></p>
+
+  <h2>Créditos registrados</h2> <!-- Título para la tabla de créditos -->
+
+  <!-- Tabla para mostrar los créditos registrados -->
+  <table id="tabla-creditos" border="1" cellpadding="5">
+    <thead>
+      <tr>
+        <th>ID</th> <!-- Columna: ID del crédito -->
+        <th>Cliente</th> <!-- Columna: nombre del cliente -->
+        <th>Monto</th> <!-- Columna: monto del crédito -->
+        <th>Tasa Interés</th> <!-- Columna: tasa de interés -->
+        <th>Plazo</th> <!-- Columna: plazo en meses -->
+        <th>Fecha Otorgamiento</th> <!-- Columna: fecha otorgamiento -->
+        <th>Acciones</th> <!-- Columna: botones para editar y borrar -->
+      </tr>
+    </thead>
+    <tbody></tbody> <!-- Aquí se llenan las filas con JavaScript -->
+  </table>
+
+  <h2 >Gráfico de Créditos por Cliente</h2> <!-- Título para el gráfico -->
+
+  <!-- Canvas donde se dibuja el gráfico con Chart.js -->
+  <canvas id="graficoCreditos"></canvas>
+
+  <!-- Librería Chart.js para crear gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Script con la lógica para manejar formulario, tabla y gráfico -->
+  <script src="/static/script.js"></script>
+</body>
+</html>
