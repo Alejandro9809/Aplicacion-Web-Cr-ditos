@@ -32,3 +32,13 @@ Edita o elimina créditos usando los botones correspondientes.
 
 Visualiza el gráfico de créditos otorgados por cliente.
 
+Aplicacion-Web-Cr-ditos/
+├── static/
+│ ├── style.css # Estilos del frontend
+│ └── script.js # Lógica de frontend con JavaScript
+├── templates/
+│ └── index.html # Página principal con formulario y tabla
+├── database.db # Base de datos SQLite
+├── app.py # Aplicación Flask (backend)
+└── README.md # Documentación del proyecto
+
